@@ -3,65 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple Calculator</title>
+  <title>Modern Calculator</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: "Segoe UI", sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background: #f4f4f9;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      margin: 0;
     }
     .calculator {
-      background: #fff;
+      background: #1e1e2f;
       padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
       text-align: center;
-      width: 280px;
+      width: 300px;
+    }
+    .calculator h2 {
+      color: #fff;
+      margin-bottom: 15px;
     }
     input {
       width: 100%;
-      padding: 10px;
-      margin: 8px 0;
+      padding: 12px;
+      margin: 10px 0;
       font-size: 18px;
-      border: 1px solid #ccc;
+      border: none;
       border-radius: 8px;
+      outline: none;
+      background: #2a2a40;
+      color: #fff;
+    }
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 10px;
     }
     button {
-      width: 48%;
-      padding: 10px;
-      margin: 5px 1%;
+      padding: 12px;
       font-size: 18px;
+      font-weight: bold;
       border: none;
       border-radius: 8px;
       background: #4CAF50;
       color: white;
       cursor: pointer;
+      transition: 0.3s;
     }
     button:hover {
-      background: #45a049;
+      background: #43a047;
+      transform: scale(1.05);
     }
     .result {
-      margin-top: 15px;
-      font-size: 20px;
+      margin-top: 20px;
+      font-size: 22px;
       font-weight: bold;
-      color: #333;
+      color: #ffeb3b;
     }
   </style>
 </head>
 <body>
   <div class="calculator">
-    <h2>Simple Calculator</h2>
+    <h2>Modern Calculator</h2>
     <input type="number" id="num1" placeholder="Enter first number">
     <input type="number" id="num2" placeholder="Enter second number">
     
-    <div>
+    <div class="buttons">
       <button onclick="calculate('+')">+</button>
       <button onclick="calculate('-')">-</button>
-      <button onclick="calculate('*')">*</button>
-      <button onclick="calculate('/')">/</button>
+      <button onclick="calculate('*')">×</button>
+      <button onclick="calculate('/')">÷</button>
     </div>
 
     <div class="result" id="result">Result: </div>
